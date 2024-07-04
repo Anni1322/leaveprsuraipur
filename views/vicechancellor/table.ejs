@@ -13,9 +13,9 @@
     %>
 
 <div class="table-responsive">
-    <a href="/admin/home"><i class="text-success fas fa-home fa-lg mx-3 mt-2"></i></a>
-    <a href="/admin/userexport"><i class="text-success fas fa-print fa-lg mx-3 mt-2"></i>Export Excel</a>
-    <a href="/admin/userexportPdf"><i class="text-success fas fa-print fa-lg mx-3 mt-2"></i>Export Pdf</a>
+    <a href="/Vicechancellor/home"><i class="text-success fas fa-home fa-lg mx-3 mt-2"></i></a>
+    <a href="/Vicechancellor/userexport"><i class="text-success fas fa-print fa-lg mx-3 mt-2"></i>Export Excel</a>
+    <a href="/Vicechancellor/userexportPdf"><i class="text-success fas fa-print fa-lg mx-3 mt-2"></i>Export Pdf</a>
     
 <!-- for each ejs -->
 <% if (users != ''){%>
@@ -44,7 +44,7 @@
         <td><%= row.is_admin %> </td>
         <td><%= row.mobile %> </td>                  
         <td>
-            <a href="/admin/edit?id=<%= row._id %>"> <i class="text-success fas fa-edit fa-lg mx-3 mt-2"></i></a>
+            <a href="/Vicechancellor/edit?id=<%= row._id %>"> <i class="text-success fas fa-edit fa-lg mx-3 mt-2"></i></a>
             <i class="text-danger fas fa-trash fa-lg mx-1 mt-5" onclick="confirmDelete('<%= row._id %>')" ></i>
         </td>
     </tr>                            
@@ -75,7 +75,7 @@
     // You can customize the alert message and behavior here
     if (confirm("Are you sure you want to delete this item?")) {
       // If the user clicks "OK", navigate to the delete URL
-      window.location.href = "/admin/delete/" + id;
+      window.location.href = "/Vicechancellor/delete/" + id;
     } else {
       // If the user clicks "Cancel" or closes the alert, do nothing
        
