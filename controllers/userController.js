@@ -306,6 +306,7 @@ const verifymail = async(req, res)=>{
     const updateInfo = await User.updateOne({_id:req.query.id},{$set:{is_verified:1}})
      console.log(updateInfo);
      res.render("email-verified");
+     return;
     
     }catch(error){
          console.log(error.message)
@@ -325,15 +326,19 @@ const verifyLogin = async (req, res) => {
             if (passwordMatch) {
                 if (userData.is_verified === 0) {
                     res.render('login', { message: "Please verify your email." });
+                    return;
                 } else {
                     req.session.user_id = userData._id;
                     res.redirect('/home');
+                    return;
                 }
             } else {
                 res.render('login', { message: "Email and password is incorrect." });
+                return;
             }
         } else {
             res.render('login', { message: "Incorrect Email" });
+            return;
         }
     } catch (error) {
         console.log("Verification error, please verify your email.", error.message);
