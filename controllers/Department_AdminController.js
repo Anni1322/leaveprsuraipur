@@ -87,17 +87,21 @@ const verifyLogin = async (req, res) => {
         // check admin or not
         if (userData.Department_Admin === 0) {
           res.render("login", { message: "Email and Password is incorrect." });
+          return;
         } else {
           req.session.user_id = userData._id;
           
           // send admin home
           res.redirect("/Department_Admin/home");
+          return;
         }
       } else {
         res.render("login", { message: "Email and Password is incorrect." });
+        return;
       }
     } else {
       res.render("login", { message: "Email and Password is incorrect." });
+      return;
     }
   } catch (error) {
     console.log(error.message);
@@ -142,6 +146,7 @@ const loadRegister = async (req, res) => {
   try{
     const departmentData = await Department.find();
     res.render('registration',{department:departmentData})
+    return;
  }catch(error){
      console.log(error.message)
  }
@@ -181,8 +186,10 @@ const insertUser = async(req, res)=>{
       if(userData){
           sendvarifyMail(req.body.name, req.body.email, userData._id);
           res.render('login',{message:'Your registration has been successflly, Please varify your email'})
+          return;
       }else{
           res.render('registration',{message:'Your registration has been failed'})
+          return;
       }
   }
 
@@ -198,6 +205,7 @@ const loadlogout = async (req, res) => {
   try {
     req.session.destroy();
     res.redirect("/admin");
+    return;
   } catch (error) {
     console.log(error.message);
   }
@@ -205,6 +213,7 @@ const loadlogout = async (req, res) => {
 const forgetLoad = async (req, res) => {
   try {
     res.render("forget");
+    return;
   } catch (error) {
     console.log(error.message);
   }
@@ -228,9 +237,11 @@ const forgetVerify = async (req, res) => {
         res.render("forget", {
           message: "Please check your email to reset your password.",
         });
+        return;
       }
     } else {
       res.render("forget", { message: "Email incorrect." });
+      return;
     }
   } catch (error) {
     console.log(error.message);
