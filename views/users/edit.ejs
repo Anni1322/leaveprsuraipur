@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.css">
+</head>
+<body>
+    <div class="container" style="margin-top: 135px;">
+
+<%- include('../layouts/header.ejs') %>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      grid-column: span 2;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      grid-column: span 2;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+<form action="" method="POST" enctype="multipart/form-data">
+
+    <img src="userimages/<%= user.image%>" width="100px" height="100px" alt="<%= user.image%>">
+    <input type="file" name="image">
+    <input type="hidden" name="user_id" value="<%= user._id %>">
+
+    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+ 
+    <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required>
+    
+    <input type="text" name="designation" value="<%= user.designation %>" placeholder="Designation"required>
+
+    <input type="text" name="department" value="<%= user.department %>"  placeholder="Department" required>
+
+    <input type="text" name="eid" value="<%= user.eid %>"   placeholder="EID">
+ 
+    <input type="number" name="mobile"  value="<%= user.mobile %>" placeholder="Enter Mobile Number" required>
+    
+  
+    
+    <input type="text" name="address" value="<%= user.address %>" placeholder="Address">
+   
+    <input type="submit" value="Update Profile" >
+</form>
+
+
+
+
+<% include('../layouts/footer.ejs') %>
+
+ <!-- jQuery -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <!-- DataTables JS -->
+ <script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.js"></script>
+ <!-- Bootstrap Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>

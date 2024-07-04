@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Leave Balance</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Create Leave Balance (अवकाश संतुलन बनाएं)</h2>
+                <form action="/createLeaveBal" method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="user_id" class="form-label">User ID:</label>
+                        <input type="text" class="form-control" id="user_id" name="user_id" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="casual_leave" class="form-label">आकस्मिक अवकाश (Casual Leave):</label>
+                        <input type="number" class="form-control" id="casual_leave" name="casual_leave" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="earned_leave" class="form-label">प्राप्त अवकाश (Earned Leave):</label>
+                        <input type="number" class="form-control" id="earned_leave" name="earned_leave" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="optional_leave" class="form-label">ऐच्छिक अवकाश (Optional Leave):</label>
+                        <input type="number" class="form-control" id="optional_leave" name="optional_leave" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="medical_leave" class="form-label">चिकित्सा अवकाश (Medical Leave):</label>
+                        <input type="number" class="form-control" id="medical_leave" name="medical_leave" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="special_leave" class="form-label">विशेष अवकाश (Special Leave):</label>
+                        <input type="number" class="form-control" id="special_leave" name="special_leave" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="duty_leave" class="form-label">कर्तव्य अवकाश (Duty Leave):</label>
+                        <input type="number" class="form-control" id="duty_leave" name="duty_leave" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary mt-3">Submit (सबमिट करें)</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

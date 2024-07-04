@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Ensure proper spacing -->
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+    <title>Administrator Login</title>
+</head>
+<body>
+
+<% include('../layouts/header.ejs') %>
+
+<div class="container">
+    <h1>Administrator Login</h1>
+
+    <form action="" method="post">
+        <% if (typeof message !== 'undefined') { %>
+            <div class="alert alert-danger" role="alert">
+                <%= message %>
+            </div>
+        <% } %>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div class="other">
+        <a href="/GAD/forget">Forget</a>
+    </div>
+</div>
+
+<% include('../layouts/footer.ejs') %>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

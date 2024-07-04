@@ -1,0 +1,331 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print View - Employee Leave Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .leave-details {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .print-button {
+            display: none;
+        }
+
+        @media print {
+            .print-button {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Leave Details Application</h2>
+
+    <div class="leave-details">
+        <label for="employee-name">Employee Name:</label>
+        <p><%= leave.name %></p>
+
+        <label for="department">Department:</label>
+        <p><%= leave.d_name %></p>
+
+        <label for="eid">Your EID:</label>
+        <p><%= leave.eid %></p>
+
+        <label for="leave-type">Leave Type:</label>
+        <p><%= leave.leave_type %></p>
+
+        <label for="start-date">Start Date:</label>
+        <p><%= leave.start_date %></p>
+
+        <label for="end-date">End Date:</label>
+        <p><%= leave.end_date %></p>
+
+        <label for="reason">Reason:</label>
+        <p><%= leave.reason %></p>
+
+        <label for="days">Leave Duration (in days):</label>
+        <p><%= leave.days %></p>
+    </div>
+
+    <button class="btn bg-primary print-button" onclick="window.print()">Print</button>
+
+
+
+
+    
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        header span {
+            color: red;
+        }
+
+        header h3 {
+            margin-top: 20px;
+        }
+
+        section {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        header[style="text-align: end"] {
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        /* Add additional styling as needed */
+    </style>
+  </head>
+  <body>
+    <header>
+      <span style="color: rgb(3, 0, 0)">
+       <h2>Employee Leave Application</h2> 
+       
+       <img style="margin-left: 0px;" src="http://www.prsuuniv.in/resources/assets/img/logo.png" width="100px" height="100px"><br/>
+        <h3 style="color: rgb(247, 28, 28)">Pt. Ravishankar Shukla University,</h3> 
+        Raipur, Chhattisgarh, India</span
+      ><br />
+      NAAC <span style="color: rgb(62, 244, 26)">Grade B++,</span> Ranking by
+      NIRF<br /><br />
+       
+      <strong>Employee Name <br> <h2><%= leave.name %> </h2></strong>
+          
+    </header>
+
+    <section>
+     
+
+      <p><strong>Department:</strong> <%= leave.d_name %></p>
+
+      <p><strong>Your EID:</strong> <%= leave.eid %></p>
+
+      <p><strong>Leave Type:</strong> <%= leave.leave_type %></p>
+
+      <p><strong>Start Date:</strong> <%= leave.start_date %></p>
+
+      <p><strong>End Date:</strong> <%= leave.end_date %></p>
+
+      <p><strong>Leave Duration (in days):</strong> <%= leave.days %></p>
+
+      <p></p>
+    </section>
+    <header style="text-align: end">Signature of HOD</header>
+     <section>
+        <h2>Academic Information</h2>
+        <table>
+            <tr>
+                <th>College / Institution Name</th>
+                <td>Pt. Ravishankar Shukla University, Raipur(CG)</td>
+            </tr>
+            <tr>
+                <th>Name of College HOD</th>
+                <td>Dr. Sanjay Kumar</td>
+            </tr>
+            <tr>
+                <th>Mobile no of HOD</th>
+                <td>9827172100</td>
+            </tr>
+            <tr>
+                <th>Email of HOD</th>
+                <td>sanraipur@rediffmail.com</td>
+            </tr>
+        </table>
+    </section> -->
+
+    <!-- <section>
+        <h2>Center Information</h2>
+        <p><strong>Selected Training center 1:</strong> NIC STATE CENTRE MANTRALAYA</p>
+        <p><strong>Selected Training center 2:</strong> RAIPUR</p>
+        <p><strong>Selected Training center 3:</strong> RAIGARH</p>
+    </section> -->
+
+    <!-- <section>
+        <h2>Education</h2>
+        <table>
+            <tr>
+                <th>S.No.</th>
+                <th>Passing Year</th>
+                <th>Semester</th>
+                <th>Obtained Marks</th>
+                <th>Total Marks</th>
+                <th>Percent/Grading</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2022-2023</td>
+                <td>1</td>
+                <td>646</td>
+                <td>1000</td>
+                <td>65%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2022-2023</td>
+                <td>2</td>
+                <td>666</td>
+                <td>1000</td>
+                <td>67%</td>
+            </tr>
+        </table>
+
+        <p><strong>Aggregate Percentage:</strong> 65.600%</p>
+    </section> -->
+  <!-- </body> -->
+<!-- </html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Approval Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            margin: 10px;
+        }
+        .content {
+            margin: 20px;
+        }
+        .header, .footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content-section {
+            margin-bottom: 20px;
+        }
+        .signature {
+            width: 150px;
+            height: auto;
+        }
+        .align-right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn bg-primary print-button align-right" onclick="window.print()">
+        Print
+      </button>
+    <div class="container content">
+        <div class="header">
+            <img style="margin-left: 0px;" src="http://www.prsuuniv.in/resources/assets/img/logo.png" width="100px" height="100px"><br/>
+            <h3>पं. रविशंकर शुक्ल विश्वविद्यालय, रायपुर (छ.ग.)</h3>
+            <p>Phone No. 0771-2262587 Website: www.prsu.ac.in E-mail: dradmin@prsu.ac.in</p>
+        </div> <b><hr></b>
+
+        <div class="content-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>क्रमांक: _______/सा.प्र.शा./________</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>रायपुर, दिनांक:_____/_____ /______ </p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h4>//आदेश//</h4>
+            </div>
+      
+            
+            <!-- <p><b><%= leave.name %>,</b> <b><%= leave.designation %>(द्वितीय श्रेणी लिपिक),</b> <b><%= leave.d_name %>,</b>    पं. रविशंकर शुक्ल विश्वविद्यालय, रायपुर को दिनांक <b><%= leave.start_date %></b> से <b><%= leave.end_date %></b>  तक कुल <b><%= leave.days %></b>  दिनों का अर्जित अवकाश स्वीकृत किया जाता है।</p> -->
+            <p><b><%= leave.name %>,</b> <b><%= leave.designation %>,</b> <b><%= leave.d_name %>,</b>    पं. रविशंकर शुक्ल विश्वविद्यालय, रायपुर को दिनांक <b><%= leave.start_date %></b> से <b><%= leave.end_date %></b>  तक कुल <b><%= leave.days %></b>  दिनों का अर्जित अवकाश स्वीकृत किया जाता है।</p>
+
+            <p>इनके अवकाश अवधि में  <b>डॉ. अनुराग श्रीवास्तव,</b>  हि.श्रे.लि. अपने कार्यों के साथ-साथ इनके कार्यों का भी संपादन करेंगे।</p>
+
+            <p>उपर्युक्त अवकाश स्वीकृति पश्चात इनके अवकाश लेखे में <b>EL: <%= LeaveBalancedata.earned_leave, %></b> ,<b>CL: <%= LeaveBalancedata.casual_leave, %></b>   दिनों का अर्जित अवकाश शेष है।</p>
+
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <p>आवश्यकतानुसार</p>
+                    <p>उपकुलसचिव (प्रशा.)</p>
+                    <p>रायपुर, दिनांक: ___/__/___</p>
+                </div>
+
+                <div class="col-md-12">
+                <p>क्रमांक: _____/सा.प्र.शा./______</p>
+                <p>प्रतिलिपि:</p>
+                <ol>
+                    <li>संबंधित कर्मचारी को।</li>
+                    <li>संबंधित विभाग को।</li>
+                    <li>कुलपति/कुलसचिव के निजी सहायक, पं. रविशंकर शुक्ल विश्वविद्यालय, रायपुर को सूचनाार्थ।</li>
+                </ol>
+                 
+                </div>
+
+            </div>
+        </div>
+
+        
+
+        <div class="footer text-right">
+            <p>महा.कुलसचिव (प्रशा.)</p>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/023/264/092/small/fake-hand-drawn-autographs-set-handwritten-signature-scribble-for-business-certificate-or-letter-isolated-illustration-vector.jpg" alt="Digital Signature" class="signature">
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

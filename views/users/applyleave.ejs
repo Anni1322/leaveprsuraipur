@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+          .hidden {
+            display: none;
+        }
+    </style>
+    <title>Employee Leave Form</title>
+    
+
+  </head>
+<body>
+
+<div class="cantainer card bg-primary-subtle">
+
+
+    <div class="leave-form">
+        <h2 class="text-center bg-primary rouned-3">Employee Leave Form</h2>
+        
+        <% 
+        if(typeof message !== 'undefined'){
+            %>
+            <p style="color: forestgreen;"> <%= message %></p>
+            <%
+        }
+        %>
+      
+  <div class="container">
+    <form action="" method="post" class="row g-3">
+      <!-- <a class="text-center bg-secondary">.</a> -->
+      <a class="text-center bg-warning text-white" href="/home">Home</a>
+      <div class="col-md-6">
+          <label for="employee-name" class="form-label">Employee Name:</label><span style="color: red;">*</span>
+          <select type="text"  id="employee-name" name="name" class="form-select">
+              <option value="<%= user.name %>"><%= user.name %></option>
+          </select>
+      </div>
+      <div class="col-md-6">
+          <label for="designation" class="form-label">Designation:</label><span style="color: red;">*</span>
+          <select type="text"  id="designation" name="designation" class="form-select">
+              <option value="<%= user.designation %>"><%= user.designation %></option>
+          </select>
+      </div>
+      <div class="col-md-6">
+          <label for="department" class="form-label">Department:</label>
+          <select id="employee-name" name="d_name" class="form-select">
+              <option value="<%= user.department %>"><%= user.department %> </option>
+              
+          </select>
+      </div>
+      <div class="col-md-6">
+          <label for="eid" class="form-label">Your EID:</label>
+          <input type="text" name="eid" value="<%= user.eid %>" class="form-control">
+      </div>
+    
+        <div class="col-md-6">
+            <label for="leave-type" class="form-label">Leave Type:</label>
+            <select id="leave-type" name="leave_type" class="form-select" onchange="toggleReasonField()">
+                <option value="Earned Leave">Earned Leave </option>
+                <option value="Casual Leave">Casual Leave </option>
+                <option value="Optional leave">Optional leave </option>
+                <option value="Special Leave">Special Leave</option>
+                <option value="Medical Leave">Medical Leave</option>
+                <option value="Duty Leave">Duty Leave</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+    <div class=" mt-3 hidden" id="reason-field">
+        <div class="col-md-6">
+            <label for="other" class="form-label">Reason:</label>
+            <input type="text" id="other" name="other" class="form-control">
+        </div>
+    </div>
+  
+
+      <div class="col-md-6">
+          <label for="start-date" class="form-label">Start Date:</label><span style="color: red;">*</span>
+          <input type="date" id="start_date" name="start_date" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+          <label for="end-date" class="form-label">End Date:</label> <span style="color: red;">*</span>
+          <input type="date" id="end_date" name="end_date" class="form-control" oninput="calculateDateDifference()" required>
+      </div>
+      <div class="col-md-6">
+          <label for="result" class="form-label">Number of Days:</label>
+          <input type="text" id="result" name="days" class="form-control" readonly>
+      </div>
+      <input type="hidden" name="user_id" value="<%= user._id %>">
+      <div class="col-md-6">
+          <label for="reason" class="form-label">Support Document:</label>
+          <!-- <input type="file" name="image">  -->
+      </div>
+      <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Leave Request</button>
+      </div>
+  </form>
+</div>
+  </div>
+
+     
+  <script>
+    function toggleReasonField() {
+        var leaveType = document.getElementById("leave-type").value;
+        var reasonField = document.getElementById("reason-field");
+        if (leaveType === "other") {
+            reasonField.classList.remove("hidden");
+        } else {
+            reasonField.classList.add("hidden");
+        }
+    }
+</script>
+
+ 
+ <script>
+  function calculateDateDifference() {
+    var start = document.getElementById("start_date").value;
+    var end = document.getElementById("end_date").value;
+
+    // Check if either start or end date is empty
+    if (!start || !end) {
+        alert("Please enter both start and end dates.");
+        return false; // Prevent the form from submitting
+    }
+
+    const dateOne = new Date(start);
+    dateOne.setHours(0, 0, 0, 0); // Set time to midnight
+
+    const dateTwo = new Date(end);
+    dateTwo.setHours(23, 59, 59, 999); // Set time to the end of the day
+
+    // Check if the dates are valid
+    if (isNaN(dateOne) || isNaN(dateTwo)) {
+        alert("Invalid date format. Please enter valid dates.");
+        return false; // Prevent the form from submitting
+    }
+
+    // Calculate the difference in days, ensuring at least 1 day for the same day
+    const diff = dateTwo - dateOne;
+    const diffInDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+    document.getElementById("result").value = diffInDays;
+
+    // Prevent the form from submitting
+    return false;
+}
+
+ </script>
+</body>
+</html>
